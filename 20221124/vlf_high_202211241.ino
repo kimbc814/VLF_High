@@ -33,6 +33,7 @@ float L_Sonar_sensor(){
   delay(10);
   digitalWrite(L_Sonar,LOW);
   pinMode(L_Sonar,INPUT);
+  
   duration = pulseIn(L_Sonar,HIGH);
   distance=(duration *340.0)/2.0/1000.0;
   return distance;
@@ -81,8 +82,12 @@ void loop()
   float measur_width;
   measur_width = L_distance + robot_width + R_distance;
   if((measur_width>=(mazor_width-mazor_width_tolerance)) && (measur_width<=(mazor_width+mazor_width_tolerance)))
+    //'측정된 길이' 가 ('경주장 폭' - '오차 길이') 보다 크거나 같고 AND '측정된 길이' 가 ('경주장 폭' + '오차 길이') 보다 작거나 같을때.
+    //('경주장 폭' - '오차 길이') < '측정된 길이' < ('경주장 폭' + '오차 길이')
      {
     if((F_distance>mazor_width)&&(F_distance<mazor_width+400))
+      //'전방 거리'가 '경주장 폭'보다 크고 AND '전방 거리'가 '경주장 폭+400' 보다 작을때.
+      // '경주장 폭' < '전방 거리' < '경주장 폭+400' 사이
        {
       flag_mazor_1=1;
       Serial.print("flag_mazor_1 set");
