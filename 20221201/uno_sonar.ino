@@ -1,5 +1,5 @@
 // C++ code
-//n mm에서 멈춤 후 우로 90도 회전
+//벽과의 거리 n일때 좌,우회전,유턴.
 #define IN1PIN 3
 #define IN2PIN 2
 #define ENPIN1 5
