@@ -190,9 +190,6 @@ void on_BL(int a){
 void setup()
 {
 	pinMode(LED_BUILTIN, OUTPUT);
-	pinMode(F_Sonar, OUTPUT);
-	pinMode(R_Sonar, OUTPUT);
-	pinMode(L_Sonar, OUTPUT);
 	pinMode(IN1PIN ,OUTPUT);
 	pinMode(IN2PIN ,OUTPUT);
 	pinMode(IN1PIN ,OUTPUT);
