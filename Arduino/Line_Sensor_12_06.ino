@@ -80,7 +80,7 @@ void M_CTL(int dir_L,int dir_R,int spd_L,int spd_R){
 		}
 
 	}
-	else if(dir_L =-1)){
+	else if(dir_L =-1){
 		if(dir_R=-1){
 			//2,3 다르면 후진
 			digitalWrite(MOTOR_L_EN1 ,LOW);
