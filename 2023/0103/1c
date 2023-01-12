@@ -1,0 +1,29 @@
+#include<math.h>
+
+void update_sonar_old(){
+  R_distance_old = R_distance;
+  L_distance_old = L_distance;
+  F_distance_old = F_distance;
+  }
+
+void update_sonar_error(){
+  R_distance_error = R_distance - R_distance_old;
+  L_distance_error = L_distance - L_distance_old;
+  F_distance_error = F_distance - F_distance_old;
+}
+
+float  F_distance = 0.0,L_distance = 0.0,R_distance = 0.0,
+    F_distance_old = 0.0,L_distance_old = 0.0,R_distance_old = 0.0,
+    F_distance_error = 0.0,L_distance_error = 0.0,R_distance_error = 0.0, distance_error=0.0;
+	
+	
+
+loop{
+ read_sonar_sensor();
+    update_sonar_error();
+    update_sonar_old();
+	
+	
+	Serial.println(atan(d_R_distance/d_F_distance)*180/3.14);
+	
+	}
