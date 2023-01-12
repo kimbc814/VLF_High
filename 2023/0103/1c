@@ -1,5 +1,14 @@
 #include<math.h>
 
+void read_sonar_sensor(){
+  F_distance = Sonar[0].ping_cm()*10;
+  R_distance = Sonar[1].ping_cm()*10;
+  L_distance = Sonar[2].ping_cm()*10;
+  if(R_distance == 0) R_distance = maxDistance * 10.0;
+  if(L_distance == 0) L_distance = maxDistance * 10.0;
+  if(F_distance == 0) F_distance = maxDistance * 10.0;
+}
+
 void update_sonar_old(){
   R_distance_old = R_distance;
   L_distance_old = L_distance;
